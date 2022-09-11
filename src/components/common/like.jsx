@@ -1,11 +1,16 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart as solidHeart} from '@fortawesome/free-solid-svg-icons';
-import { faHeart as lightHeart} from '@fortawesome/free-regular-svg-icons';
+import React from "react";
 
-const Like = (props) => {
-    let liked = props.liked;
-    return (<FontAwesomeIcon style={{cursor:"pointer"}} icon={liked ? solidHeart: lightHeart} onClick={props.onClick}/>);
-}
- 
-export default Like; 
+const Like = props => {
+  let classes = "fa fa-heart";
+  if (!props.liked) classes += "-o";
+  return (
+    <i
+      onClick={props.onClick}
+      style={{ cursor: "pointer" }}
+      className={classes}
+      aria-hidden="true"
+    />
+  );
+};
+
+export default Like;
