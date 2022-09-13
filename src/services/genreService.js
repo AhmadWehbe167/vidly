@@ -1,14 +1,6 @@
-import axios from "axios";
+import http from "./httpService";
+import {apiUrl} from "../config.json";
 
-const apiEndpoint = "http://localhost:3900/";
-
-export const genres = axios.get(apiEndpoint + "api/genres").then(res=>{
-  return res;
-}).catch(err=>{
-  console.log(err);
-  return [];
-});
-
-export async function getGenres() {
-  return await genres;
+export function getGenres(){
+  return http.get(apiUrl + "/genres");
 }
