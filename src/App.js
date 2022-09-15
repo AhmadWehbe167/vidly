@@ -15,15 +15,15 @@ import "./App.css";
 import auth from "./services/authServices";
 
 class App extends Component {
-  state={}
-  componentDidMount(){
+  state = {};
+  componentDidMount() {
     const user = auth.getCurrentUser();
-    this.setState({user});
+    this.setState({ user });
   }
   render() {
     return (
       <React.Fragment>
-        <ToastContainer/>
+        <ToastContainer />
         <NavBar user={this.state.user} />
         <main className="container">
           <Switch>
@@ -31,7 +31,7 @@ class App extends Component {
             <Route path="/logout" component={LogOut} />
             <Route path="/login" component={LoginForm} />
             <Route path="/movies/:id" component={MovieForm} />
-            <Route path="/movies" component={Movies} />
+            <Route path="/movies" render={(props) => <Movies {...props} user={this.state.user}/>} />
             <Route path="/customers" component={Customers} />
             <Route path="/rentals" component={Rentals} />
             <Route path="/not-found" component={NotFound} />
