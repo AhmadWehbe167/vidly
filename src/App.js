@@ -22,6 +22,7 @@ class App extends Component {
     this.setState({ user });
   }
   render() {
+    console.log(process.env.REACT_APP_NAME);
     return (
       <React.Fragment>
         <ToastContainer />

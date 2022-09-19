@@ -2,6 +2,10 @@
   "name": "vidly",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node":"8.11",
+    "npm":"5.6" 
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
@@ -24,5 +28,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.2"
   }
 }
